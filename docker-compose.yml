@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  drone-server-oss:
+    image:  guessi/drone:v1.7.0-oss
+    container_name: drone-server-oss
+    environment:
+      - DRONE_GITHUB_CLIENT_ID=${DRONE_GITHUB_CLIENT}
+      - DRONE_GITHUB_CLIENT_SECRET=${DRONE_GITHUB_SECRET}
+      - DRONE_RPC_SECRET=${DRONE_SECRET}
+      - DRONE_SERVER_HOST=${DRONE_HOST}
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: always

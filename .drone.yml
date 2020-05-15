@@ -1,0 +1,20 @@
+---
+kind: pipeline
+type: docker
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: docker
+  image: plugins/docker
+  settings:
+    auto_tag: true
+    password:
+      from_secret: docker_password
+    repo: guessi/drone
+    username:
+      from_secret: docker_username
+
+...
