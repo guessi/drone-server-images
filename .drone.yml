@@ -1,20 +1,48 @@
 ---
 kind: pipeline
 type: docker
+name: enterprise-nolimit
 
 platform:
   os: linux
   arch: amd64
 
 steps:
-- name: docker
+- name: build-nolimit
   image: plugins/docker
   settings:
-    auto_tag: true
-    password:
-      from_secret: docker_password
     repo: guessi/drone
     username:
       from_secret: docker_username
+    password:
+      from_secret: docker_password
+    target: nolimit
+    tags:
+    - 1.9.0-nolimit
+    - nolimit
+
+---
+kind: pipeline
+type: docker
+name: community-nolimit
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: build-nolimit-oss
+  image: plugins/docker
+  settings:
+    repo: guessi/drone
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+    target: nolimit-oss
+    tags:
+    - 1.9.0-nolimit-oss
+    - nolimit-oss
+    - latest
 
 ...

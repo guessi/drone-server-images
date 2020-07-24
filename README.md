@@ -1,13 +1,35 @@
-# Minimal Docker Image for DroneCI Server Community Edition
+# Minimal Docker Image for DroneCI Server
 
-[![Build Status](https://cloud.drone.io/api/badges/guessi/drone-server-oss/status.svg)](https://cloud.drone.io/guessi/drone-server-oss)
+[![Build Status](https://cloud.drone.io/api/badges/guessi/drone-server-images/status.svg)](https://cloud.drone.io/guessi/drone-server-images)
+
+## Minimal docker image - DroneCI server community edition
 
 ```bash
 $ docker image ls
 
-REPOSITORY    TAG         SIZE
-guessi/drone  v1.7.0-oss  30.5MB # minimal DroneCI server community edition docker image
-drone/drone   1.7.0       67.7MB # official image
+REPOSITORY    TAG                SIZE
+guessi/drone  1.9.0-nolimit-oss  31.2MB
+guessi/drone  latest             31.2MB
+guessi/drone  nolimit-oss        31.2MB
+```
+
+## Minimal docker image - DroneCI server enterprise edition
+
+```bash
+$ docker image ls
+
+REPOSITORY    TAG                SIZE
+guessi/drone  1.9.0-nolimit      66.8MB
+guessi/drone  nolimit            66.8MB
+```
+
+## DroneCI Server Official Image
+
+```bash
+$ docker image ls
+
+REPOSITORY    TAG                SIZE
+drone/drone   1.9.0              67.7MB
 ```
 
 ## Usage
