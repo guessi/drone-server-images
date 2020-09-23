@@ -8,10 +8,11 @@ RUN git clone https://github.com/drone/drone.git . \
  && git checkout ${DRONE_VERSION_TAG} \
  && go mod download
 
-FROM builder-base as builder-notag
+FROM builder-base as builder-nolimit-oss
 
 RUN GOOS=linux GOARCH=amd64 go build \
       -ldflags '-extldflags "-static"' \
+      -tags 'oss nolimit' \
       -o /opt/drone-server \
         ./cmd/drone-server
 
@@ -40,7 +41,7 @@ COPY --from=builder-base /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 FROM base
 
-COPY --from=builder-notag /opt/drone-server /bin/
+COPY --from=builder-nolimit-oss /opt/drone-server /bin/
 
 EXPOSE 80 443
 
