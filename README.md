@@ -2,6 +2,12 @@
 
 [![Build Status](https://cloud.drone.io/api/badges/guessi/drone-server-images/status.svg)](https://cloud.drone.io/guessi/drone-server-images)
 
+## Key Differences
+
+- Build with Go 1.14
+- Build with tags (nolimit, oss)
+- Optimized Docker images
+
 ## Minimal docker image - DroneCI server community edition
 
 ```bash
