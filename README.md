@@ -8,7 +8,7 @@
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-guessi/drone  1.9.2-nolimit-oss  31.1MB
+guessi/drone  1.10.1-nolimit-oss 31.1MB
 guessi/drone  latest             31.1MB
 guessi/drone  nolimit-oss        31.1MB
 ```
@@ -19,7 +19,7 @@ guessi/drone  nolimit-oss        31.1MB
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-guessi/drone  1.9.2-nolimit      65.2MB
+guessi/drone  1.10.1-nolimit     65.2MB
 guessi/drone  nolimit            65.2MB
 ```
 
@@ -29,7 +29,7 @@ guessi/drone  nolimit            65.2MB
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-drone/drone   1.9.2              66.1MB
+drone/drone   1.10.1             66.1MB
 ```
 
 ## Usage
