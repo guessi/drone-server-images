@@ -1,14 +1,14 @@
 ---
 kind: pipeline
 type: docker
-name: default
+name: build-notag
 
 platform:
   os: linux
   arch: amd64
 
 steps:
-- name: build-no-tag-pr
+- name: dry-run
   image: plugins/docker
   settings:
     repo: guessi/drone
@@ -18,7 +18,7 @@ steps:
       include:
       - pull_request
 
-- name: build-no-tag
+- name: image-build
   image: plugins/docker
   settings:
     repo: guessi/drone
@@ -43,14 +43,14 @@ trigger:
 ---
 kind: pipeline
 type: docker
-name: enterprise-nolimit
+name: build-nolimit
 
 platform:
   os: linux
   arch: amd64
 
 steps:
-- name: build-nolimit-pr
+- name: dry-run
   image: plugins/docker
   settings:
     repo: guessi/drone
@@ -62,7 +62,7 @@ steps:
       include:
       - pull_request
 
-- name: build-nolimit
+- name: image-build
   image: plugins/docker
   settings:
     repo: guessi/drone
@@ -90,14 +90,14 @@ trigger:
 ---
 kind: pipeline
 type: docker
-name: community-nolimit
+name: build-nolimit-oss
 
 platform:
   os: linux
   arch: amd64
 
 steps:
-- name: build-nolimit-oss-pr
+- name: dry-run
   image: plugins/docker
   settings:
     repo: guessi/drone
@@ -109,7 +109,7 @@ steps:
       include:
       - pull_request
 
-- name: build-nolimit-oss
+- name: image-build
   image: plugins/docker
   settings:
     repo: guessi/drone

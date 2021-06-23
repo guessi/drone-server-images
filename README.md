@@ -1,14 +1,16 @@
-# Minimal Docker Image for DroneCI Server
+# Minimized Docker Image for DroneCI Server
 
 [![Build Status](https://cloud.drone.io/api/badges/guessi/drone-server-images/status.svg)](https://cloud.drone.io/guessi/drone-server-images)
 
 ## Key Differences
 
-- Build with Go 1.14
+- Build with Go 1.14, Alpine 3.12
 - Build with tags (nolimit, oss)
 - Optimized Docker images
 
-## Minimal docker image - DroneCI server community edition
+## Minimized DroneCI Server Image
+
+### DroneCI server build with `--tags "nolimit oss"`
 
 ```bash
 $ docker image ls
@@ -19,7 +21,7 @@ guessi/drone  latest             33.8MB
 guessi/drone  nolimit-oss        33.8MB
 ```
 
-## Minimal docker image - DroneCI server enterprise edition
+### DroneCI server build with `--tags "nolimit"`
 
 ```bash
 $ docker image ls
@@ -27,6 +29,15 @@ $ docker image ls
 REPOSITORY    TAG                SIZE
 guessi/drone  2.0.1-nolimit      51.4MB
 guessi/drone  nolimit            51.4MB
+```
+
+### DroneCI server build without `--tags`
+
+```bash
+$ docker image ls
+
+REPOSITORY    TAG                SIZE
+guessi/drone  2.0.1              51.5MB
 ```
 
 ## DroneCI Server Official Image
