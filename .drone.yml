@@ -11,8 +11,6 @@ steps:
 - name: build-no-tag-pr
   image: plugins/docker
   settings:
-    dockerfile: Dockerfile
-    context: .
     repo: guessi/drone
     dry_run: true
   when:
@@ -23,8 +21,6 @@ steps:
 - name: build-no-tag
   image: plugins/docker
   settings:
-    dockerfile: Dockerfile
-    context: .
     repo: guessi/drone
     username:
       from_secret: docker_username
@@ -57,10 +53,10 @@ steps:
 - name: build-nolimit-pr
   image: plugins/docker
   settings:
-    dockerfile: Dockerfile.nolimit
-    context: .
     repo: guessi/drone
     dry_run: true
+    build_args:
+    - "BUILD_TAGS=nolimit"
   when:
     event:
       include:
@@ -69,8 +65,6 @@ steps:
 - name: build-nolimit
   image: plugins/docker
   settings:
-    dockerfile: Dockerfile.nolimit
-    context: .
     repo: guessi/drone
     username:
       from_secret: docker_username
@@ -79,6 +73,8 @@ steps:
     tags:
     - 2.0.1-nolimit
     - nolimit
+    build_args:
+    - "BUILD_TAGS=nolimit"
   when:
     branch:
     - master
@@ -104,10 +100,10 @@ steps:
 - name: build-nolimit-oss-pr
   image: plugins/docker
   settings:
-    dockerfile: Dockerfile.nolimit-oss
-    context: .
     repo: guessi/drone
     dry_run: true
+    build_args:
+    - "BUILD_TAGS=nolimit oss"
   when:
     event:
       include:
@@ -116,8 +112,6 @@ steps:
 - name: build-nolimit-oss
   image: plugins/docker
   settings:
-    dockerfile: Dockerfile.nolimit-oss
-    context: .
     repo: guessi/drone
     username:
       from_secret: docker_username
@@ -127,6 +121,8 @@ steps:
     - 2.0.1-nolimit-oss
     - nolimit-oss
     - latest
+    build_args:
+    - "BUILD_TAGS=nolimit oss"
   when:
     branch:
     - master

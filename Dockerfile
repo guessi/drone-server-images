@@ -1,6 +1,7 @@
 FROM golang:1.14-alpine3.12 as builder-base
 
 ARG DRONE_VERSION_TAG=v2.0.1
+ARG BUILD_TAGS=
 
 RUN apk add -U --no-cache build-base ca-certificates git
 WORKDIR ${GOPATH}/src/github.com/drone/drone
@@ -8,10 +9,13 @@ RUN git clone https://github.com/drone/drone.git . \
  && git checkout ${DRONE_VERSION_TAG} \
  && go mod download
 
-FROM builder-base as builder-notag
+FROM builder-base as builder
+
+ARG BUILD_TAGS=
 
 RUN GOOS=linux GOARCH=amd64 go build \
       -ldflags '-extldflags "-static"' \
+      -tags "${BUILD_TAGS}" \
       -o /opt/drone-server \
         ./cmd/drone-server
 
@@ -40,7 +44,7 @@ COPY --from=builder-base /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 FROM base
 
-COPY --from=builder-notag /opt/drone-server /bin/
+COPY --from=builder /opt/drone-server /bin/
 
 EXPOSE 80 443
 
