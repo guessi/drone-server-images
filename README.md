@@ -16,7 +16,7 @@
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-guessi/drone  2.0.1-nolimit-oss  34.1MB
+guessi/drone  2.0.2-nolimit-oss  34.1MB
 guessi/drone  latest             34.1MB
 guessi/drone  nolimit-oss        34.1MB
 ```
@@ -27,7 +27,7 @@ guessi/drone  nolimit-oss        34.1MB
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-guessi/drone  2.0.1-nolimit      51.8MB
+guessi/drone  2.0.2-nolimit      51.8MB
 guessi/drone  nolimit            51.8MB
 ```
 
@@ -37,7 +37,7 @@ guessi/drone  nolimit            51.8MB
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-guessi/drone  2.0.1              51.8MB
+guessi/drone  2.0.2              51.8MB
 ```
 
 ## DroneCI Server Official Image
@@ -46,7 +46,7 @@ guessi/drone  2.0.1              51.8MB
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-drone/drone   2.0.1              52.3MB
+drone/drone   2.0.2              52.3MB
 ```
 
 ## Usage
