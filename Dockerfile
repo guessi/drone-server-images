@@ -1,20 +1,12 @@
 FROM golang:1.14-alpine3.13 as builder-base
 
-ARG DRONE_VERSION_TAG=v2.0.2
+ARG DRONE_VERSION_TAG=v2.0.3
 ARG BUILD_TAGS=
-
-# HINT: to pick up bug fix commit for v2.0.2, but don't bringing anyother commit
-# ref: https://github.com/drone/drone/pull/3098
-ARG DRONE_VERSION_CHERRY_PICK=d53f845480a38a86979162e7b7486d39ca4ab183
 
 RUN apk add -U --no-cache build-base ca-certificates git
 WORKDIR ${GOPATH}/src/github.com/drone/drone
 RUN git clone https://github.com/drone/drone.git . \
- && git fetch origin pull/3098/head:fix-build-failed-oss \
  && git checkout ${DRONE_VERSION_TAG} \
- && git config --global user.email "drone-ci@example.com" \
- && git config --global user.name "DroneCI" \
- && git cherry-pick ${DRONE_VERSION_CHERRY_PICK} \
  && go mod download
 
 FROM builder-base as builder
