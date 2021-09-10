@@ -27,7 +27,7 @@ steps:
     password:
       from_secret: docker_password
     tags:
-    - 2.2.0
+    - 2.3.1
   when:
     branch:
     - master
@@ -71,7 +71,7 @@ steps:
     password:
       from_secret: docker_password
     tags:
-    - 2.2.0-nolimit
+    - 2.3.1-nolimit
     - nolimit
     build_args:
     - "BUILD_TAGS=nolimit"
@@ -118,7 +118,7 @@ steps:
     password:
       from_secret: docker_password
     tags:
-    - 2.2.0-nolimit-oss
+    - 2.3.1-nolimit-oss
     - nolimit-oss
     - latest
     build_args:
