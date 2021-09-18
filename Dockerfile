@@ -3,10 +3,18 @@ FROM golang:1.14-alpine3.13 as builder-base
 ARG DRONE_VERSION_TAG=v2.3.1
 ARG BUILD_TAGS=
 
+# HINT: to pick up bug fix commit for v2.3.1, but don't bringing anyother commit
+# ref: https://github.com/drone/drone/pull/3141
+ARG DRONE_VERSION_CHERRY_PICK=b072d38a6364a8fb2bea6cfa7c322098b0e81ed2
+
 RUN apk add -U --no-cache build-base ca-certificates git
 WORKDIR ${GOPATH}/src/github.com/drone/drone
 RUN git clone https://github.com/drone/drone.git . \
+ && git fetch origin pull/3141/head:temp-cherry-pick \
  && git checkout ${DRONE_VERSION_TAG} \
+ && git config --global user.email "drone-ci@example.com" \
+ && git config --global user.name "DroneCI" \
+ && git cherry-pick ${DRONE_VERSION_CHERRY_PICK} \
  && go mod download
 
 FROM builder-base as builder
