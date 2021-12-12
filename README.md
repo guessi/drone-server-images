@@ -16,9 +16,9 @@
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-guessi/drone  2.5.0-nolimit-oss  38.9MB
-guessi/drone  latest             38.9MB
-guessi/drone  nolimit-oss        38.9MB
+guessi/drone  2.6.0-nolimit-oss  39.3MB
+guessi/drone  latest             39.3MB
+guessi/drone  nolimit-oss        39.3MB
 ```
 
 ### DroneCI server build with `--tags "nolimit"`
@@ -27,8 +27,8 @@ guessi/drone  nolimit-oss        38.9MB
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-guessi/drone  2.5.0-nolimit      58.1MB
-guessi/drone  nolimit            58.1MB
+guessi/drone  2.6.0-nolimit      58.5MB
+guessi/drone  nolimit            58.5MB
 ```
 
 ### DroneCI server build without `--tags`
@@ -37,7 +37,7 @@ guessi/drone  nolimit            58.1MB
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-guessi/drone  2.5.0              58.1MB
+guessi/drone  2.6.0              58.5MB
 ```
 
 ## DroneCI Server Official Image
@@ -46,7 +46,7 @@ guessi/drone  2.5.0              58.1MB
 $ docker image ls
 
 REPOSITORY    TAG                SIZE
-drone/drone   2.5.0-linux-amd64  58.7MB
+drone/drone   2.6.0-linux-amd64  59.1MB
 ```
 
 ## Usage
