@@ -65,5 +65,5 @@ $ docker-compose up -d
 
 ## Reference
 
-- [DroneCI](https://github.com/drone/drone)
-- [Build the Community Edition](https://github.com/drone/drone/blob/master/BUILDING_OSS)
+- [DroneCI](https://github.com/harness/drone)
+- [Build the Community Edition](https://github.com/harness/drone/blob/master/BUILDING_OSS)
