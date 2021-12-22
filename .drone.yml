@@ -72,7 +72,6 @@ steps:
       from_secret: docker_password
     tags:
     - 2.7.2-nolimit
-    - nolimit
     build_args:
     - "BUILD_TAGS=nolimit"
   when:
@@ -119,8 +118,6 @@ steps:
       from_secret: docker_password
     tags:
     - 2.7.2-nolimit-oss
-    - nolimit-oss
-    - latest
     build_args:
     - "BUILD_TAGS=nolimit oss"
   when:
