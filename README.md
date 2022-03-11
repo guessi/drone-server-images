@@ -13,11 +13,11 @@
 ```bash
 $ docker image ls
 
-REPOSITORY    TAG                SIZE
-guessi/drone  2.9.1-nolimit-oss  39.3MB # DroneCI Server Image build with `--tags "nolimit oss"`
-guessi/drone  2.9.1-nolimit      58.5MB # DroneCI Server Image build with `--tags "nolimit"`
-guessi/drone  2.9.1              58.5MB # DroneCI Server Image build without `--tags`
-drone/drone   2.9.1-linux-amd64  59.1MB # DroneCI Server Official Image
+REPOSITORY    TAG                 SIZE
+guessi/drone  2.11.0-nolimit-oss  39.3MB # DroneCI Server Image build with `--tags "nolimit oss"`
+guessi/drone  2.11.0-nolimit      58.5MB # DroneCI Server Image build with `--tags "nolimit"`
+guessi/drone  2.11.0              58.5MB # DroneCI Server Image build without `--tags`
+drone/drone   2.11.0-linux-amd64  59.1MB # DroneCI Server Official Image
 ```
 
 ## Usage
