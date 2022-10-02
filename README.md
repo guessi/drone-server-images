@@ -4,7 +4,7 @@
 
 ## Key Differences
 
-- Build with Go 1.14, Alpine 3.13
+- Build with golang:1.18-alpine3.16
 - Build with tags (nolimit, oss)
 - Optimized Docker images
 
@@ -14,9 +14,9 @@
 $ docker image ls
 
 REPOSITORY    TAG                 SIZE
-guessi/drone  2.13.0-nolimit-oss  39.4MB # DroneCI Server Image build with `--tags "nolimit oss"`
-guessi/drone  2.13.0-nolimit      58.6MB # DroneCI Server Image build with `--tags "nolimit"`
-guessi/drone  2.13.0              58.7MB # DroneCI Server Image build without `--tags`
+guessi/drone  2.13.0-nolimit-oss  35.8MB # DroneCI Server Image build with `--tags "nolimit oss"`
+guessi/drone  2.13.0-nolimit      52.1MB # DroneCI Server Image build with `--tags "nolimit"`
+guessi/drone  2.13.0              52.1MB # DroneCI Server Image build without `--tags`
 drone/drone   2.13.0-linux-amd64  60.4MB # DroneCI Server Official Image
 ```
 

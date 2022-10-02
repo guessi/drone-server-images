@@ -1,4 +1,4 @@
-FROM golang:1.14-alpine3.13 as builder-base
+FROM golang:1.18-alpine3.16 as builder-base
 
 ARG DRONE_VERSION_TAG=v2.13.0
 ARG BUILD_TAGS=
@@ -25,7 +25,7 @@ RUN GOOS=linux GOARCH=amd64 go build \
 #
 # the only difference is the binary of `drone-server`
 #
-FROM alpine:3.13 as base
+FROM alpine:3.16 as base
 
 RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
 
