@@ -2,7 +2,7 @@ version: '3'
 
 services:
   drone-server-nolimit:
-    image: guessi/drone:2.13.0-nolimit
+    image: guessi/drone:2.14.0-nolimit
     container_name: drone-server-nolimit
     environment:
       - DRONE_GITHUB_CLIENT_ID=${DRONE_GITHUB_CLIENT}
