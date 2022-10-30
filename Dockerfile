@@ -1,6 +1,6 @@
 FROM golang:1.18-alpine3.16 as builder-base
 
-ARG DRONE_VERSION_TAG=v2.14.0
+ARG DRONE_VERSION_TAG=v2.15.0
 ARG BUILD_TAGS=
 
 RUN apk add -U --no-cache build-base ca-certificates git
