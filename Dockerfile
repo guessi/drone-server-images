@@ -29,7 +29,7 @@ FROM alpine:3.16 as base
 
 RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
 
-ENV GODEBUG netdns=go \
+ENV GODEBUG=netdns=go \
     XDG_CACHE_HOME=/data \
     DRONE_DATABASE_DRIVER=sqlite3 \
     DRONE_DATABASE_DATASOURCE=/data/database.sqlite \
