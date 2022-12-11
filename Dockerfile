@@ -1,4 +1,4 @@
-FROM golang:1.18-alpine3.16 as builder-base
+FROM public.ecr.aws/docker/library/golang:1.18-alpine3.16 AS builder-base
 
 ARG DRONE_VERSION_TAG=v2.15.0
 ARG BUILD_TAGS=
@@ -25,9 +25,13 @@ RUN GOOS=linux GOARCH=amd64 go build \
 #
 # the only difference is the binary of `drone-server`
 #
-FROM alpine:3.16 as base
+FROM public.ecr.aws/docker/library/alpine:3.16.3 as base
 
-RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
+# after upgrading to "alpine:3.16.3" there's no need to hack nsswitch.conf
+# refs:
+# - https://www.alpinelinux.org/posts/Alpine-3.16.3-released.html
+# - https://git.alpinelinux.org/aports/commit/?h=v3.16.3&id=348653a9ba0701e8e968b3344e72313a9ef334e4
+# RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
 
 ENV GODEBUG netdns=go \
     XDG_CACHE_HOME=/data \
