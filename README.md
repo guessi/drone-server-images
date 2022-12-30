@@ -1,7 +1,5 @@
 # Minimized Docker Image for DroneCI Server
 
-[![Build Status](https://cloud.drone.io/api/badges/guessi/drone-server-images/status.svg)](https://cloud.drone.io/guessi/drone-server-images)
-
 ## Key Differences
 
 - Build with golang:1.18-alpine3.16
